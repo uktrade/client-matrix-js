@@ -4,7 +4,8 @@
   "description": "Expose client capabilities for several frameworks when running UI tests against third party providers",
   "main": "lib/index.js",
   "scripts": {
-    "test": "eslint --cache . && ./node_modules/.bin/jest",
+    "test": "./node_modules/.bin/jest",
+    "lint": "eslint --cache .",
     "build": "babel src --presets babel-preset-es2015 --out-dir lib"
   },
   "author": "DIT",
