@@ -69,7 +69,7 @@ against, flatten it out in the following key:
 ```
 // wdio.conf.js
 const clientMatrix = require('client-matrix-js')
-const clientMatrixList = clientMatrix.requestedClients(['chrome_latest', 'firefox_latest'], true)
+const clientMatrixList = clientMatrix.requestedClients(['chrome_latest', 'firefox_latest'])
 export.config = {
 // ...
   capabilities: [...clientMatrixList],
