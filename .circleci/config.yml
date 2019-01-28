@@ -48,7 +48,7 @@ jobs:
           command: npm run test
           when: always
 
-  build:
+  build_and_publish:
     branches:
       only:
         - master
@@ -76,7 +76,7 @@ workflows:
       - unit_test:
           requires:
             - dependencies
-      - build:
+      - build_and_publish:
           requires:
             - lint_test
             - unit_test
