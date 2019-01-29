@@ -59,7 +59,10 @@ jobs:
       - *restore_npm_cache
       - run:
           name: Jest tests
-          command: npm run build
+          command: |
+            npm run build
+            echo "//registry.npmjs.org/:_authToken=$AUTH_TOKEN" > ~/.npmrc
+            npm publish
           when: always
 
 workflows:
