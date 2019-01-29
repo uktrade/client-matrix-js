@@ -11,6 +11,14 @@
   "publishConfig": {
     "access": "public"
   },
+  "keywords": [
+    "nightwatch",
+    "webdriverio",
+    "saucelabs",
+    "browserstack",
+    "browser",
+    "matrix"
+  ],
   "author": "DIT",
   "license": "MIT",
   "devDependencies": {
