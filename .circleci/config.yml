@@ -62,6 +62,7 @@ jobs:
           command: |
             npm run build
             echo "//registry.npmjs.org/:_authToken=$AUTH_TOKEN" > ~/.npmrc
+            npm version "1.0.$CIRCLE_BUILD_NUM"
             npm publish
           when: always
 
