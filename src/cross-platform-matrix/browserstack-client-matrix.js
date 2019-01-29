@@ -19,7 +19,7 @@ export const clients = {
   edge_latest: {
     browserName: 'Edge',
     os: 'Windows',
-    os_version: '10'
+    os_version: '10',
   },
   firefox_latest_macos: {
     browserName: 'Firefox',
