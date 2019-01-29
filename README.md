@@ -1,7 +1,7 @@
 # Client matrix
 
 The intentation of this package is to provide client capabilities when running UI tests against third party providers
-like browserstack and saucelabs
+like browserstack and saucelabs. This package provides capabilities in the format for both WebdriverIO and NightwatchJS.
 
 ## Build status
 
@@ -37,7 +37,7 @@ export.config = {
 }
 ```
 
-## Package usage
+## Usage
 
 Add the package to your test suite using the following command:
 
@@ -48,7 +48,8 @@ Then import the function from the exposed module to have the ability to get a li
 `const clientMatrix = require('@uktrade/client-matrix-js')`
 
 To fetch capabilities for a given device or browser for your wdio test suite,
-use the functiondo the following way:
+simply provide the clients in a list, notice that the strings need to match
+the maintained [client matrix](https://github.com/uktrade/client-matrix-js/blob/master/src/cross-platform-matrix/browserstack-client-matrix.js):
 
 `clientMatrix.requestedClients(['chrome_latest', 'firefox_latest'])`
 
@@ -56,12 +57,11 @@ To fetch capabilities for nightwatch, ensure the flag is set to true:
 
 `clientMatrix.requestedClients(['chrome_latest', 'firefox_latest'], true)`
 
-The package currently has its own maintaned client matrix, see [here](https://github.com/uktrade/client-matrix-js/blob/master/src/cross-platform-matrix/browserstack-client-matrix.js)
-
-You can maintain your own client matrix and inject it to the function the following way:
+The package currently has its own browserstack maintaned [client matrix](https://github.com/uktrade/client-matrix-js/blob/master/src/cross-platform-matrix/browserstack-client-matrix.js),
+although you can maintain your own matrix (either browserstack, saucelabs or any other provider) and inject it to the function:
 
 ```
-const clientMatrix = {
+const sauceLabsMatrix = {
   FIREFOX: {
     BROWSER_NAME: 'firefox',
   },
@@ -75,5 +75,5 @@ const clientMatrix = {
 
 // If you'd like nightwatch capabilities output
 // ensure the flag is set to true
-clientMatrix.requestedClients(['chrome', 'edge'], false, clientMatrix)
+clientMatrix.requestedClients(['chrome', 'edge'], false, sauceLabsMatrix)
 ```
