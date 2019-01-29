@@ -1,6 +1,6 @@
 {
   "name": "@uktrade/client-matrix-js",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Expose client capabilities for several frameworks when running UI tests against third party providers",
   "main": "lib/index.js",
   "scripts": {
