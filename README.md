@@ -28,7 +28,7 @@ against, provide it in the `capabilities` key in the conf file:
 
 ```
 // wdio.conf.js
-const clientMatrix = require('client-matrix-js')
+const clientMatrix = require('@uktrade/client-matrix-js')
 const clientMatrixList = clientMatrix.requestedClients(['chrome_latest', 'firefox_latest'])
 export.config = {
 // ...
@@ -45,7 +45,7 @@ Add the package to your test suite using the following command:
 
 Then import the function from the exposed module to have the ability to get a list of capabilities:
 
-`const clientMatrix = require('client-matrix-js')`
+`const clientMatrix = require('@uktrade/client-matrix-js')`
 
 To fetch capabilities for a given device or browser for your wdio test suite,
 use the functiondo the following way:
